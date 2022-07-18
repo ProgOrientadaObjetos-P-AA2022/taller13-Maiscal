@@ -3,14 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package p3;
+package OpenClosedPrinciple;
 
-import p1.MatriculaCampamento;
-import p1.MatriculaColegio;
-import p1.MatriculaEscuela;
-import p1.MatriculaJardin;
-import p1.MatriculaMaternal;
-import p2.TipoMatricula;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,13 +14,14 @@ import p2.TipoMatricula;
 public class Principal {
     public static void main(String[] args) {
         TipoMatricula tipos = new TipoMatricula();
+        ArrayList<Matricula> lista = new ArrayList<>();
         
         MatriculaCampamento mcamp = new MatriculaCampamento();
         mcamp.establecerTarifa();
         
         MatriculaColegio mcolegio = new MatriculaColegio();
         mcolegio.establecerTarifa();
-        
+       
         MatriculaEscuela mescuela = new MatriculaEscuela();
         mescuela.establecerTarifa();
         
@@ -37,10 +33,22 @@ public class Principal {
         
         MatriculaMaternal mmaternal2 = new MatriculaMaternal();
         mmaternal2.establecerTarifa();
+       
         
-        tipos.establecerMatriculaCampamento(mcamp);
-        tipos.establecerMatriculaColegio(mcolegio);
+        lista.add(mcamp);
+        lista.add(mcolegio);
+        lista.add(mescuela);
+        lista.add(mjardin);
+        lista.add(mmaternal);
+        lista.add(mmaternal2);
+        
+        
+        tipos.establecerLista(lista);
         tipos.establecerPromedioTarifas();
-        System.out.printf("%s\n", tipos);
+        
+        System.out.printf("%s\n",lista);
+         System.out.printf("Promedio de Tarifas: %.2f\n", 
+                tipos.obtenerPromedioTarifas());
+        
     }
 }
