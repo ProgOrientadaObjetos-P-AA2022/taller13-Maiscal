@@ -54,5 +54,4 @@ public class Estudiante {
         }
         return data;
     }
-
 }
