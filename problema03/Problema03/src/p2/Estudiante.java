@@ -6,8 +6,7 @@
 package p2;
 
 import java.util.ArrayList;
-import javax.tools.Tool;
-import p3.Correo;
+import DependencyInversionPrinciple.Correo;
 
 /**
  *
